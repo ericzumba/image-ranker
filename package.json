@@ -1,0 +1,19 @@
+{
+  "name": "image-ranker",
+  "version": "0.0.1",
+  "description": "A f@cking great image ranker! Yeah! (•_•)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ericzumba/image-ranker.git"
+  },
+  "author": "ericzumba, krymble, robertomarin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ericzumba/image-ranker/issues"
+  },
+  "homepage": "https://github.com/ericzumba/image-ranker"
+}
