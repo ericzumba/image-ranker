@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/ericzumba/image-ranker/issues"
   },
-  "homepage": "https://github.com/ericzumba/image-ranker"
+  "homepage": "https://github.com/ericzumba/image-ranker",
+  "dependencies": {
+    "pixelr": "0.1.6",
+    "blessed": "0.0.43"
+  }
 }
