@@ -7,6 +7,6 @@ var files = fs.readdirSync('sample/');
 
 files.forEach(function(filename, index, something) {
 	console.log('arquivo: ' + filename);
-	ranker.rank('sample/' + filename, );
+	ranker.rank('sample/' + filename);
 });
 
