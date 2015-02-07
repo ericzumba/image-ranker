@@ -4,28 +4,55 @@
   <head>
     <title>VivaReal - Image Ranker </title>
 	<link href="http://cdn.vivareal.com.br/v/static/css/core/core-76d7cef659.css" rel="stylesheet" type="text/css"/>
-    <img src="http://cdn.vivareal.com.br/v/static/img/core/logo-footer-c3ac873e43.png" alt="VivaReal - Portal Imobiliário logo">
   </head>
   <style>
+  .header{
+  	overflow: auto;
+  	display: block;
+  	margin-left: 20px;
+  	margin-top: 10px;
+  }
+  .logo{
+  	width: 250px; float: left;
+  }
+  h1 {
+  	position: relative;
+  	float: left;
+  	margin-top: 20px;
+  	margin-left: 40px;
+  	clear: none;
+  }
+  
   ul { padding: 0; }
-  li { display: inline-block; width: 48%; padding: 0; margin: 0; }
-  img { max-width: 100%; }
+  li { display: inline-block; /*width: 48%;*/ padding: 0; margin: 0; font-size: 16px }
+  img { max-width: 100%; max-height: 340px;}
   div { position: relative; display: inline-block; }
-  span { position: absolute; color: white; bottom: 0; right: 0; padding: 10px; font-size: 28px; text-shadow: 5px 3px 10px rgba(150, 150, 150, 1); }
-  p { position: absolute; color: white; top: 0; left: 0; padding: 10px; font-size: 28px; text-shadow: 5px 3px 10px rgba(150, 150, 150, 1); margin: 0; }
+  span { position: absolute; color: white; bottom: 0; right: 0; padding: 10px; font-size: 22px; text-shadow: 5px 3px 10px rgba(150, 150, 150, 1); }
+  p { position: absolute; color: white; top: 0; left: 0; padding: 10px; font-size: 22px; text-shadow: 5px 3px 10px rgba(150, 150, 150, 1); margin: 0; }
+  .image-wrapper { height: 200}
+ ul.menu { margin: 20px: padding: 10px }
+  
   </style>
   <body>
-    <h1>VivaReal - Image Ranker</h1>
+  	<div class="header">
+  	<img  class="logo" src="logo.png" >
+    <h1>Image Ranker</h1>
+    </div>
+    <br>
     <ul>
-    
+    	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       	<li><a href="/?show=true">Standard</a></li>&nbsp;&nbsp;&nbsp;	
+    	<li><a href="/?show=true&sort=hash">Detect Duplicates</a></li>&nbsp;&nbsp;&nbsp;
+       	<li><a href="/?show=true&sort=score">Best Score</a></li>
     </ul>
+    &nbsp;
     
     <ul>
     <% for (var i = 0; i < list.length; i++) { %>
     	<li>
-		<div>
+		<div class="image-wrapper">
 		<% if(show) { %>
-		<p>Score: <%=list[i].score.toFixed(2).replace('.', ',')%> <%=list[i].hash%> <%=list[i].colors%> </p>
+		<p>Score:<%=list[i].score.toFixed(2).replace('.', ',')%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#<%=list[i].hash%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%=list[i].colors%> </p>
 		<span><strong><%=list[i].width%>x<%=list[i].height%></strong></span>
 		<% } %>
 		<img src="<%=list[i].name.replace('public/', '')%>">
