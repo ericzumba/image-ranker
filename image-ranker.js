@@ -38,7 +38,8 @@ exports.rank = function(img) {
 			if (err) 
 				return;
 
-			var _color = value / 1024 * 10;
+//			var _color = value / 1024 * 10;
+			var _color = value / 400000 * 10;
 			info.colors = value;
 			result.color = max10(_color);
 			
@@ -63,7 +64,31 @@ exports.rank = function(img) {
 		function finalize() {
 			console.log('result: ' + JSON.stringify(result));
 			
-			var score = result.resolution * .6 + result.color * .2 + result.filesize * .2;
+			var score = result.resolution * .40 + result.color * .40 + result.filesize * .2;
+			
+			// not very well implemented =/
+			if(info.colors < 70000) {
+				score -=.2;
+			}
+			if(info.colors < 50000) {
+				score -=.2;
+			}
+			if(info.colors < 20000) {
+				score -=.4;
+			}
+			if(info.colors < 10000) {
+				score -=.4;
+			}
+			if(info.colors < 5000) {
+				score -=.4;
+			}
+			if(info.colors < 1000) {
+				score -=.7;
+			}
+			
+			if(score < 0) {
+				score = 0;
+			}
 			
 			console.log('resu:' + JSON.stringify(result));
 			console.log('info: ' + JSON.stringify(info));

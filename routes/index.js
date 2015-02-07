@@ -2,16 +2,20 @@ var express = require('express');
 var router = express.Router();
 var ImageInfo = require('../mongo').ImageInfo;
 
-/* GET home page. */
 router.get('/', function(req, res, next) {
 
-	ImageInfo.find(function(err, list) {
+	console.log('---->>> sort: ' + sort);
+	var sort = req.query.sort;
+	if(sort == null) {
+		sort = 'hash';
+	}
 
-		console.log('a lista: ' + list)
-		
+	console.log('---->>> sort: ' + sort);
+	
+	ImageInfo.find().sort('-' + sort).exec(function(err, list) {
 		res.render('index', {
-			title : 'Express',
-			list: list
+			list: list,
+			show: req.query.show
 		});
 	});
 
