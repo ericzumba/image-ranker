@@ -1,0 +1,178 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', 'phash' ]
+2 info using npm@2.1.10
+3 info using node@v0.10.33
+4 verbose node symlink /usr/local/bin/node
+5 silly cache add args [ 'phash', null ]
+6 verbose cache add spec phash
+7 silly cache add parsed spec { raw: 'phash',
+7 silly cache add   scope: null,
+7 silly cache add   name: 'phash',
+7 silly cache add   rawSpec: '',
+7 silly cache add   spec: '*',
+7 silly cache add   type: 'range' }
+8 verbose addNamed phash@*
+9 silly addNamed semver.valid null
+10 silly addNamed semver.validRange *
+11 silly addNameRange { name: 'phash', range: '*', hasData: false }
+12 silly mapToRegistry name phash
+13 silly mapToRegistry using default registry
+14 silly mapToRegistry registry https://registry.npmjs.org/
+15 silly mapToRegistry uri https://registry.npmjs.org/phash
+16 verbose addNameRange registry:https://registry.npmjs.org/phash not in flight; fetching
+17 verbose request uri https://registry.npmjs.org/phash
+18 verbose request no auth needed
+19 info attempt registry request try #1 at 23:37:18
+20 verbose request id 9cc6b00ddca4f830
+21 http request GET https://registry.npmjs.org/phash
+22 http 200 https://registry.npmjs.org/phash
+23 silly get cb [ 200,
+23 silly get   { date: 'Sat, 07 Feb 2015 01:37:34 GMT',
+23 silly get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+23 silly get     etag: '"7PKH294T1WFHZ1MAU8M9VNCUV"',
+23 silly get     'content-type': 'application/json',
+23 silly get     'cache-control': 'max-age=60',
+23 silly get     'content-length': '9799',
+23 silly get     'accept-ranges': 'bytes',
+23 silly get     via: '1.1 varnish',
+23 silly get     age: '0',
+23 silly get     'x-served-by': 'cache-jfk1029-JFK',
+23 silly get     'x-cache': 'MISS',
+23 silly get     'x-cache-hits': '0',
+23 silly get     'x-timer': 'S1423273053.812446,VS0,VE355',
+23 silly get     vary: 'Accept',
+23 silly get     'keep-alive': 'timeout=10, max=50',
+23 silly get     connection: 'Keep-Alive' } ]
+24 silly addNameRange number 2 { name: 'phash', range: '*', hasData: true }
+25 silly addNameRange versions [ 'phash', [ '0.0.1', '0.0.2', '0.0.3', '0.0.5' ] ]
+26 verbose addNamed phash@0.0.5
+27 silly addNamed semver.valid 0.0.5
+28 silly addNamed semver.validRange 0.0.5
+29 silly mapToRegistry name phash
+30 silly mapToRegistry using default registry
+31 silly mapToRegistry registry https://registry.npmjs.org/
+32 silly mapToRegistry uri https://registry.npmjs.org/phash
+33 verbose addRemoteTarball https://registry.npmjs.org/phash/-/phash-0.0.5.tgz not in flight; adding
+34 verbose addRemoteTarball [ 'https://registry.npmjs.org/phash/-/phash-0.0.5.tgz',
+34 verbose addRemoteTarball   'a4d789f5e4d44d9ce3dabf0bdb60a3871577134a' ]
+35 info retry fetch attempt 1 at 23:37:37
+36 info attempt registry request try #1 at 23:37:37
+37 http fetch GET https://registry.npmjs.org/phash/-/phash-0.0.5.tgz
+38 http fetch 200 https://registry.npmjs.org/phash/-/phash-0.0.5.tgz
+39 silly fetchAndShaCheck shasum a4d789f5e4d44d9ce3dabf0bdb60a3871577134a
+40 verbose addTmpTarball /var/folders/p8/0kx3rwt97hsdq7s__8v0qjnc0000gn/T/npm-32580-63b8a9e3/registry.npmjs.org/phash/-/phash-0.0.5.tgz not in flight; adding
+41 verbose addTmpTarball already have metadata; skipping unpack for phash@0.0.5
+42 silly cache afterAdd phash@0.0.5
+43 verbose afterAdd /Users/erictorti/.npm/phash/0.0.5/package/package.json not in flight; writing
+44 verbose afterAdd /Users/erictorti/.npm/phash/0.0.5/package/package.json written
+45 silly install resolved [ { name: 'phash',
+45 silly install resolved     version: '0.0.5',
+45 silly install resolved     description: 'Bindings for node.js to pHash',
+45 silly install resolved     main: 'index',
+45 silly install resolved     repository:
+45 silly install resolved      { type: 'git',
+45 silly install resolved        url: 'https://github.com/aaronm67/node-phash.git' },
+45 silly install resolved     devDependencies: { 'node-gyp': '*', should: '1.0.0', mocha: '1.3.0' },
+45 silly install resolved     engines: { node: '>=0.8.0' },
+45 silly install resolved     script:
+45 silly install resolved      { preinstall: 'node-gyp configure build',
+45 silly install resolved        preuninstall: 'rm -rf build/*' },
+45 silly install resolved     directories: { test: 'tests' },
+45 silly install resolved     scripts:
+45 silly install resolved      { test: 'node-gyp configure build && mocha',
+45 silly install resolved        install: 'node-gyp rebuild' },
+45 silly install resolved     keywords: [ 'pHash', 'phash', 'libpHash', 'native', 'binding', 'addon' ],
+45 silly install resolved     author: { name: 'Aaron Marasco', email: 'agm257@mail.missouri.edu' },
+45 silly install resolved     contributors: [ [Object], [Object], [Object] ],
+45 silly install resolved     gypfile: true,
+45 silly install resolved     readme: '# node-phash\n\n  node-pash is [pHash](http://www.phash.org/) bindings for node.js.\n\n  Phash is a library that will create a "perceptual hash" of media files, so similar files will return similar hashes. Typically to compare hashes, \n  a simple [Hamming distance](http://en.wikipedia.org/wiki/Hamming_distance) between the two hashes is a good indicator of how similar two\n  media files are.\n\n  Current version supports only image hashing. (no video & audio hashing)\n  \n  [![Build Status](https://travis-ci.org/aaronm67/node-phash.png?branch=master)](https://travis-ci.org/aaronm67/node-phash)\n\n## Installation\n\nnode-phash depends on  [CImg](http://cimg.sourceforge.net/), [pHash](http://www.phash.org/), [ImageMagicK](http://www.imagemagick.org/).\n\nOn Ubuntu:\n\n    sudo apt-get install cimg-dev libphash0-dev libmagickcore-dev\n\nOn OSX:\n\n    brew install phash imagemagick\n\nThen, install using npm:\n\n    $ npm install phash\n\n## Functions\n\n```js\n\n// asynchronous hash\nimageHash(filename, function(err, hash));\n\n// synchronous hash\nvar hash = imageHashSync(filename);\n\nhammingDistance(hash1, hash2);\n```\n\n## Usage\n\n```js\nvar pHash = require("phash");\n\npHash.imageHash("file.jpg", function(err, hash) {\n    if (err) {\n        throw err;\n    }\n\n    // hash is the pHash of file.jpg\n});\n\nvar hashA = pHash.imageHashSync("a.jpg");\nvar hashB = pHash.imageHashSync("b.png");\nvar hammingAB = pHash.hammingDistance(hashA,hashB);\nconsole.log("Hamming Distance A -> B: " + hammingAB);\n```\n',
+45 silly install resolved     readmeFilename: 'README.md',
+45 silly install resolved     _id: 'phash@0.0.5',
+45 silly install resolved     dist:
+45 silly install resolved      { shasum: 'a4d789f5e4d44d9ce3dabf0bdb60a3871577134a',
+45 silly install resolved        tarball: 'http://registry.npmjs.org/phash/-/phash-0.0.5.tgz' },
+45 silly install resolved     _from: 'phash@*',
+45 silly install resolved     _npmVersion: '1.2.17',
+45 silly install resolved     _npmUser: { name: 'xissy', email: 'xissysnd@gmail.com' },
+45 silly install resolved     maintainers: [ [Object] ],
+45 silly install resolved     _shasum: 'a4d789f5e4d44d9ce3dabf0bdb60a3871577134a',
+45 silly install resolved     _resolved: 'https://registry.npmjs.org/phash/-/phash-0.0.5.tgz' } ]
+46 info install phash@0.0.5 into /Users/erictorti/Workspace/image-ranker
+47 info installOne phash@0.0.5
+48 verbose installOne of phash to /Users/erictorti/Workspace/image-ranker not in flight; installing
+49 verbose lock using /Users/erictorti/.npm/_locks/phash-b0ab2905f532f323.lock for /Users/erictorti/Workspace/image-ranker/node_modules/phash
+50 silly install write writing phash 0.0.5 to /Users/erictorti/Workspace/image-ranker/node_modules/phash
+51 silly cache addNamed cb phash@0.0.5
+52 verbose unbuild node_modules/phash
+53 verbose gentlyRm vacuuming /Users/erictorti/Workspace/image-ranker/node_modules/phash
+54 verbose tar unpack /Users/erictorti/.npm/phash/0.0.5/package.tgz
+55 verbose tar unpacking to /Users/erictorti/Workspace/image-ranker/node_modules/phash
+56 verbose gentlyRm vacuuming /Users/erictorti/Workspace/image-ranker/node_modules/phash
+57 silly gunzTarPerm modes [ '755', '644' ]
+58 silly gunzTarPerm extractEntry package.json
+59 silly gunzTarPerm extractEntry .npmignore
+60 silly gunzTarPerm extractEntry README.md
+61 silly gunzTarPerm extractEntry LICENSE
+62 silly gunzTarPerm extractEntry index.js
+63 silly gunzTarPerm extractEntry .travis.yml
+64 silly gunzTarPerm extractEntry test/test.js
+65 silly gunzTarPerm extractEntry lib/index.js
+66 silly gunzTarPerm extractEntry binding.gyp
+67 silly gunzTarPerm extractEntry phash.cpp
+68 silly gunzTarPerm extractEntry examples/a.jpg
+69 silly gunzTarPerm extractEntry examples/b.png
+70 silly gunzTarPerm extractEntry examples/c.png
+71 silly gunzTarPerm extractEntry examples/d.jpg
+72 silly gunzTarPerm extractEntry examples/f.png
+73 silly gunzTarPerm extractEntry examples/g.jpg
+74 silly gunzTarPerm extractEntry examples/h.jpg
+75 info preinstall phash@0.0.5
+76 silly install resolved []
+77 verbose about to build /Users/erictorti/Workspace/image-ranker/node_modules/phash
+78 info build /Users/erictorti/Workspace/image-ranker/node_modules/phash
+79 verbose linkStuff [ false,
+79 verbose linkStuff   false,
+79 verbose linkStuff   false,
+79 verbose linkStuff   '/Users/erictorti/Workspace/image-ranker/node_modules' ]
+80 info linkStuff phash@0.0.5
+81 verbose linkBins phash@0.0.5
+82 verbose linkMans phash@0.0.5
+83 verbose rebuildBundles phash@0.0.5
+84 info install phash@0.0.5
+85 verbose unsafe-perm in lifecycle true
+86 info phash@0.0.5 Failed to exec install script
+87 verbose unlock done using /Users/erictorti/.npm/_locks/phash-b0ab2905f532f323.lock for /Users/erictorti/Workspace/image-ranker/node_modules/phash
+88 verbose stack Error: phash@0.0.5 install: `node-gyp rebuild`
+88 verbose stack Exit status 1
+88 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:212:16)
+88 verbose stack     at EventEmitter.emit (events.js:98:17)
+88 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/spawn.js:14:12)
+88 verbose stack     at ChildProcess.emit (events.js:98:17)
+88 verbose stack     at maybeClose (child_process.js:756:16)
+88 verbose stack     at Process.ChildProcess._handle.onexit (child_process.js:823:5)
+89 verbose pkgid phash@0.0.5
+90 verbose cwd /Users/erictorti/Workspace/image-ranker/find-duplicates
+91 error Darwin 14.1.0
+92 error argv "node" "/usr/local/bin/npm" "install" "phash"
+93 error node v0.10.33
+94 error npm  v2.1.10
+95 error code ELIFECYCLE
+96 error phash@0.0.5 install: `node-gyp rebuild`
+96 error Exit status 1
+97 error Failed at the phash@0.0.5 install script 'node-gyp rebuild'.
+97 error This is most likely a problem with the phash package,
+97 error not with npm itself.
+97 error Tell the author that this fails on your system:
+97 error     node-gyp rebuild
+97 error You can get their info via:
+97 error     npm owner ls phash
+97 error There is likely additional logging output above.
+98 verbose exit [ 1, true ]
+99 verbose unbuild node_modules/phash
+100 info preuninstall phash@0.0.5
+101 info uninstall phash@0.0.5
+102 verbose unbuild rmStuff phash@0.0.5 from /Users/erictorti/Workspace/image-ranker/node_modules
+103 info postuninstall phash@0.0.5
+104 verbose gentlyRm vacuuming /Users/erictorti/Workspace/image-ranker/node_modules/phash
+105 silly gentlyRm purging /Users/erictorti/Workspace/image-ranker/node_modules/phash
+106 silly gentlyRm quitting because other entries in /Users/erictorti/Workspace/image-ranker/node_modules
